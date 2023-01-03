@@ -12,31 +12,47 @@
 //   return "Ok";
 // }
 
-function Circle(radius) {
-  this.radius = radius;
+// function Circle(radius) {
+//   this.radius = radius;
 
-  let defaultLocation = { x: 0, y: 1 };
+//   let defaultLocation = { x: 0, y: 1 };
 
-  this.getDefaultLocation = function () {
-    return defaultLocation;
-  };
+//   this.getDefaultLocation = function () {
+//     return defaultLocation;
+//   };
 
-  this.draw = function () {
-    console.log("Draw");
-  };
+//   this.draw = function () {
+//     console.log("Draw");
+//   };
 
-  Object.defineProperty(this, "defaultLocation", {
-    get: function () {
-      return defaultLocation;
-    },
-    set: function (value) {
-      if (!value.x || !value.y) throw new Error("Invalid Location");
-      defaultLocation = value;
-    },
-  });
-}
+//   Object.defineProperty(this, "defaultLocation", {
+//     get: function () {
+//       return defaultLocation;
+//     },
+//     set: function (value) {
+//       if (!value.x || !value.y) throw new Error("Invalid Location");
+//       defaultLocation = value;
+//     },
+//   });
+// }
 
-const circle = new Circle(10);
-circle.defaultLocation.x = 1;
-circle.defaultLocation.y = 2;
-circle.draw();
+// const circle = new Circle(10);
+// circle.defaultLocation.x = 1;
+// circle.defaultLocation.y = 2;
+// circle.draw();
+
+let person = { name: "Prakash" };
+
+Object.defineProperty(person, "name", {
+  writable: false,
+  enumerable: false,
+  configurable: false,
+});
+
+person.name = "suryam";
+console.log(person.name);
+
+console.log(Object.keys(person));
+
+delete person.name;
+console.log(person.name);
