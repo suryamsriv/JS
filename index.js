@@ -1,5 +1,7 @@
 // console.log(checkSpeed(73));
 
+const Circle = require("./circle");
+
 // function checkSpeed(speed) {
 //   let points = 0;
 //   const checkPoint = 5;
@@ -41,18 +43,23 @@
 // circle.defaultLocation.y = 2;
 // circle.draw();
 
-let person = { name: "Prakash" };
+// let person = { name: "Prakash" };
 
-Object.defineProperty(person, "name", {
-  writable: false,
-  enumerable: false,
-  configurable: false,
-});
+// Object.defineProperty(person, "name", {
+//   writable: false,
+//   enumerable: false,
+//   configurable: false,
+// });
 
-person.name = "suryam";
-console.log(person.name);
+// person.name = "suryam";
+// console.log(person.name);
 
-console.log(Object.keys(person));
+// console.log(Object.keys(person));
 
-delete person.name;
-console.log(person.name);
+// delete person.name;
+// console.log(person.name);
+
+require("./circle");
+
+const c = new Circle(10);
+c.draw();
